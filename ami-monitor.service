@@ -1,0 +1,14 @@
+[Unit]
+Description=AMI Monitor Service for Asterisk
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3.12 /opt/ami_monitor/ami_monitor.py
+WorkingDirectory=/opt/ami_monitor
+Restart=always
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
